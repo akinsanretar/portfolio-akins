@@ -15,20 +15,22 @@ const projectsData = [
     contract: "Alternance (Master)",
     location: "Saint-Denis (93) · Sur site",
     sector: "Transport Ferroviaire Grande Vitesse & Low-cost",
-    summary: "Pilotage stratégique et opérationnel du projet d'Assistant Virtuel IA conversationnel pour moderniser le parcours voyageur et optimiser le selfcare à grande échelle.",
+    summary: "Chargé de la relation client, je pilote l'assistant virtuel IA de OUIGO : feuille de route, suivi de la performance et accompagnement des équipes.",
     star: {
       situation: "Chez OUIGO (des millions de billets vendus chaque année), le service relation client fait face à de très forts volumes de requêtes à faible valeur ajoutée (recherches d'horaires, règles bagages, billets, perturbations).",
       tache: "Cadrer, piloter et optimiser le déploiement continu d'un Assistant Virtuel (Chatbot IA) pour apporter des réponses immédiates 24/7, fluidifier le parcours voyageur et accroître le taux de selfcare.",
       action: [
-        "Cadrage fonctionnel et formalisation des cas d'usage clients prioritaires.",
-        "Collaboration étroite avec les équipes produit et tech pour l'entraînement et l'optimisation des flux conversationnels.",
-        "Animation de la boucle d'amélioration continue basée sur les feedbacks réels et l'analyse de verbatims voyageurs.",
-        "Suivi rigoureux des indicateurs clés (taux de résolution au premier contact, satisfaction CSAT, taux de transfert aux conseillers humains)."
+        "Définition de la vision stratégique et de la feuille de route fonctionnelle de l'assistant virtuel, en co-construction avec le prestataire.",
+        "Suivi de la satisfaction et de la performance de l'assistant, et pilotage des plans d'amélioration continue.",
+        "Accompagnement des téléconseillers dans l'adoption de l'IA au quotidien.",
+        "Évaluation de la qualité des réponses par e-mail et des appels téléphoniques, avec des recommandations d'amélioration.",
+        "Coordination de la relation avec les centres de relation client.",
+        "Suivi des points de contact pour identifier les motifs récurrents de réclamations clients."
       ],
       resultats: [
-        "Amélioration sensible de la fluidité du parcours client digital en avant et après-vente.",
-        "Disponibilité immédiate de l'assistance 24h/24 sans engorgement des canaux humains.",
-        "Recentrage du temps des conseillers sur les dossiers sensibles à forte valeur émotionnelle."
+        "Plus de 50 000 questions posées à l'assistant virtuel, disponible 24h/24 pour les voyageurs.",
+        "Feuille de route fonctionnelle partagée avec le prestataire et suivie dans le temps.",
+        "Motifs récurrents de réclamations identifiés pour orienter les améliorations."
       ]
     },
     deliverables: [
@@ -64,9 +66,9 @@ const projectsData = [
         "Organisation complète et animation sur scène d'un séminaire national rassemblant les assistantes et assistants de direction du Groupe SNCF."
       ],
       resultats: [
-        "Adoption réussie du Chatbot IA avec réduction des sollicitations de premier niveau.",
-        "Montée en autonomie des équipes sur la suite PowerApps grâce aux tutoriels dédiés.",
-        "Plébiscite du séminaire national et valorisation forte du CSP."
+        "Chatbot IA interne du CSP mis en place, avec un suivi de sa performance.",
+        "Tutoriels et plans de communication livrés pour le déploiement des applications Power Apps.",
+        "Séminaire national organisé de bout en bout pour 100 participants, avec l'animation d'une séquence sur l'activité physique et le bien-être."
       ]
     },
     deliverables: [
@@ -83,7 +85,7 @@ const projectsData = [
     title: "Instruction de Dossiers & JOP Paris 2024",
     role: "Stagiaire auprès du service des sports",
     company: "Région Île-de-France (Conseil Régional)",
-    period: "Mars – Juil. 2024 (5 mois)",
+    period: "Mars – Juil. 2024 (4 mois)",
     contract: "Stage de BUT",
     location: "Saint-Ouen (93) · Siège de Région",
     sector: "Politiques Publiques Territoriales & Écosystème Olympique",
@@ -101,9 +103,9 @@ const projectsData = [
         "Gestion de la billetterie sportive de la Région et organisation des déplacements (inaugurations, assemblées générales, événements)."
       ],
       resultats: [
-        "Traitement fluide et sécurisé des dossiers dans le respect strict des calendriers administratifs.",
-        "Renforcement des liens de proximité avec les collectivités franciliennes.",
-        "Contribution active à la dynamique populaire des Jeux de Paris 2024."
+        "Dossiers de subvention instruits dans le respect des calendriers administratifs.",
+        "Suivi régulier des dossiers et des projets avec les mairies et les partenaires sportifs franciliens.",
+        "Participation au lancement de la Semaine Olympique et Paralympique, le 3 avril 2024 à Vaires-sur-Marne."
       ]
     },
     deliverables: [
@@ -135,8 +137,8 @@ const projectsData = [
         "Participation aux écritures d'inventaire de clôture."
       ],
       resultats: [
-        "Mise à jour irréprochable des dossiers clients dans le respect des échéances légales.",
-        "Acquisition d'une solide culture financière indispensable pour le pilotage de budgets projets et du ROI."
+        "Dossiers clients mis à jour dans le respect des échéances légales.",
+        "Bases solides en comptabilité générale, en TVA et en analyse de trésorerie."
       ]
     },
     deliverables: [
