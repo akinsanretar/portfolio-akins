@@ -158,6 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+let projectModalOpener = null;
+
 // Ouvre la fiche détaillée d'une mission
 window.openProjectModal = function (projectId) {
   const proj = projectsData.find(p => p.id === projectId);
@@ -326,9 +328,12 @@ window.openProjectModal = function (projectId) {
     </div>
   `;
 
+  projectModalOpener = document.activeElement;
   modal.classList.remove("hidden");
   modal.classList.add("flex");
   document.body.style.overflow = "hidden";
+  const closeBtn = document.getElementById("project-modal-close");
+  if (closeBtn) closeBtn.focus();
 
   const cover = modalBody.querySelector(".train-cover");
   if (cover && window.trainCover) window.trainCover.launch(cover);
@@ -344,9 +349,12 @@ window.closeProjectModal = function () {
     // Coupe une éventuelle vidéo en cours de lecture
     const body = document.getElementById("project-modal-content");
     if (body) body.innerHTML = "";
+    if (modal.classList.contains("hidden")) return;
     modal.classList.add("hidden");
     modal.classList.remove("flex");
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "";
+    if (projectModalOpener) projectModalOpener.focus();
+    projectModalOpener = null;
   }
 };
 
@@ -425,14 +433,19 @@ document.addEventListener('DOMContentLoaded', () => {
     list.appendChild(li);
   });
 
-  const open = () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; };
+  const open = () => { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; closeBtn.focus(); };
   const close = () => {
+    if (modal.style.display !== 'flex') return;
     modal.style.display = 'none'; document.body.style.overflow = '';
+    card.focus();
     frame.src = 'about:blank'; frame.style.display = 'none'; link.style.display = 'none'; empty.style.display = 'block';
     list.querySelectorAll('button').forEach(b => b.className = base + off);
   };
 
   card.addEventListener('click', open);
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+  });
   closeBtn.addEventListener('click', close);
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });

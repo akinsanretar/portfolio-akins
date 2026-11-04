@@ -15,9 +15,43 @@
   <meta property="og:title" content="Akins ANRETAR — Chargé de la relation client chez OUIGO">
   <meta property="og:description"
     content="Pilotage de projets IA et conduite du changement chez OUIGO et SNCF Optim'services. Master Management Stratégique & Changement (ISM-IAE Paris-Saclay).">
-  <meta property="og:image" content="assets/images/profile_banner.png">
+  <meta property="og:url" content="https://akinsanretar.github.io/portfolio-akins/">
+  <meta property="og:image" content="https://akinsanretar.github.io/portfolio-akins/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Akins ANRETAR, chargé de la relation client chez OUIGO">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="assets/images/Logo_AKINS.png">
+  <meta name="twitter:title" content="Akins ANRETAR — Chargé de la relation client chez OUIGO">
+  <meta name="twitter:description"
+    content="Pilotage de l'assistant virtuel chez OUIGO, conduite du changement. Master Management Stratégique & Changement (ISM-IAE Paris-Saclay).">
+  <meta name="twitter:image" content="https://akinsanretar.github.io/portfolio-akins/assets/images/og-image.jpg">
+  <link rel="canonical" href="https://akinsanretar.github.io/portfolio-akins/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Akins ANRETAR",
+    "url": "https://akinsanretar.github.io/portfolio-akins/",
+    "image": "https://akinsanretar.github.io/portfolio-akins/assets/images/img_PRO.jpg",
+    "jobTitle": "Chargé de la relation client",
+    "description": "Chargé de la relation client chez OUIGO, en charge du pilotage de l'assistant virtuel.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "OUIGO (SNCF Voyageurs)",
+      "url": "https://www.ouigo.com/"
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "ISM-IAE, Université Paris-Saclay" },
+      { "@type": "CollegeOrUniversity", "name": "IUT de Meaux, Université Gustave Eiffel" }
+    ],
+    "knowsLanguage": ["fr", "en"],
+    "sameAs": ["https://www.linkedin.com/in/akins-anretar"]
+  }
+  </script>
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -47,11 +81,11 @@
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
   <!-- Custom CSS for Matthew Brutalist Luxe Theme -->
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030i">
-  <link rel="stylesheet" href="assets/css/apple-effects.css?v=20261030i">
-  <link rel="stylesheet" href="assets/css/doc-stack.css?v=20261030i">
-  <link rel="stylesheet" href="assets/css/interests.css?v=20261030i">
-  <link rel="stylesheet" href="assets/css/train-cover.css?v=20261030i">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261104b">
+  <link rel="stylesheet" href="assets/css/apple-effects.css?v=20261104b">
+  <link rel="stylesheet" href="assets/css/doc-stack.css?v=20261104b">
+  <link rel="stylesheet" href="assets/css/interests.css?v=20261104b">
+  <link rel="stylesheet" href="assets/css/train-cover.css?v=20261104b">
 </head>
 
 <body class="bg-[#EAECEF] text-[#111215] antialiased selection:bg-black selection:text-white relative">
@@ -59,8 +93,8 @@
   <!-- ========================================== -->
   <!-- OVERLAY DE RÉVÉLATION (LOGO REVEAL APPLE LIGHT) -->
   <!-- ========================================== -->
-  <div id="logo-reveal-overlay" role="button" tabindex="0" aria-label="Révéler le portfolio"
-    class="fixed inset-0 z-[9999] bg-[#FBFBFD] flex flex-col items-center justify-center cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+  <div id="logo-reveal-overlay" aria-hidden="true"
+    class="fixed inset-0 z-[9999] bg-[#FBFBFD] flex flex-col items-center justify-center cursor-pointer select-none outline-none"
     style="transition: transform 800ms cubic-bezier(0.77, 0, 0.175, 1); will-change: transform;">
     
     <!-- Halot subtil d'ambiance Apple -->
@@ -79,13 +113,6 @@
         <span id="logo-reveal-signature-line" class="signature-line"></span>
       </div>
 
-      <!-- Texte d'invite épuré, typographie moderne Apple -->
-      <div id="logo-reveal-prompt" class="flex items-center gap-2.5 pointer-events-none opacity-0 transition-opacity duration-700">
-        <span class="w-1.5 h-1.5 rounded-full bg-neutral-300"></span>
-        <p class="text-xs sm:text-[13px] font-medium tracking-normal text-neutral-500 font-sans">
-          Cliquer pour découvrir
-        </p>
-      </div>
     </div>
   </div>
 
@@ -95,8 +122,10 @@
       const content = document.getElementById('logo-reveal-content');
       if (!overlay || !content) return;
 
-      // Verrouiller le scroll
-      document.body.style.overflow = 'hidden';
+      // L'intro ne s'affiche qu'une fois par visite, et jamais sur un lien direct vers une section
+      let seen = false;
+      try { seen = sessionStorage.getItem('introSeen') === '1'; sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+      if (seen || location.hash) { overlay.remove(); return; }
 
       // 1. Préchargement du son de transition
       let revealAudio = null;
@@ -115,17 +144,16 @@
         content.classList.add('opacity-100', 'scale-100', 'translate-y-0');
       }, 50);
 
-      // 2. Signature : elle s'écrit sous le logo, puis l'invitation à cliquer apparaît
+      // 2. Signature : elle s'écrit sous le logo, puis l'écran s'efface tout seul
       const signature = document.getElementById('logo-reveal-signature');
       const signatureLine = document.getElementById('logo-reveal-signature-line');
-      const prompt = document.getElementById('logo-reveal-prompt');
       const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function startSignature() {
         if (!signature || signature.classList.contains('is-writing')) return;
         signature.classList.add('is-writing');
         if (signatureLine) signatureLine.classList.add('is-writing');
-        setTimeout(function () { if (prompt) prompt.classList.add('opacity-100'); }, reducedMotion ? 0 : 2300);
+        setTimeout(handleReveal, reducedMotion ? 600 : 2600);
       }
 
       // On attend la police manuscrite (au plus 1,5 s) pour éviter un affichage de secours
@@ -140,7 +168,6 @@
 
       function finishReveal() {
         overlay.remove();
-        document.body.style.overflow = '';
         window.dispatchEvent(new Event('resize'));
       }
 
@@ -171,13 +198,13 @@
         setTimeout(finishReveal, 820);
       }
 
+      // Un clic, une touche ou un défilement passe l'intro immédiatement
       overlay.addEventListener('click', handleReveal);
-      overlay.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {
-          e.preventDefault();
-          handleReveal();
-        }
-      });
+      window.addEventListener('keydown', handleReveal, { once: true });
+      window.addEventListener('wheel', handleReveal, { once: true, passive: true });
+      window.addEventListener('touchstart', handleReveal, { once: true, passive: true });
+      // Filet de sécurité si la police tarde : l'intro ne dure jamais plus de 5 s
+      setTimeout(handleReveal, 5000);
     })();
   </script>
 
@@ -197,20 +224,22 @@
           class="w-8 h-8 rounded-lg bg-white border border-gray-200 p-1 shadow-sm flex items-center justify-center group-hover:border-black transition">
           <img src="assets/images/Logo_AKINS.png" alt="Logo Akins" class="w-full h-full object-contain" />
         </div>
-        <span class="text-xs font-bold uppercase tracking-wider text-black font-sans hidden sm:inline-block">
+        <span class="text-xs font-bold uppercase tracking-wider text-black font-sans hidden sm:inline-block lg:hidden">
           PORTFOLIO BY <span class="font-extrabold">AKINS</span>
         </span>
       </a>
 
       <!-- Center Nav Links -->
       <nav
-        class="hidden lg:flex items-center gap-5 xl:gap-7 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+        class="hidden lg:flex items-center gap-4 xl:gap-6 text-[11px] font-bold uppercase tracking-widest text-gray-500"
+        aria-label="Navigation principale">
         <a href="#profil" class="hover:text-black transition">Profil</a>
         <a href="#experiences" class="hover:text-black transition">Expériences</a>
         <a href="#projets" class="hover:text-black transition">Projets</a>
-        <a href="#methodes" class="hover:text-black transition">Méthodes</a>
+        <a href="#methodes" class="hover:text-black transition">Compétences</a>
         <a href="#formations" class="hover:text-black transition">Formations</a>
-        <a href="#appreciation" class="hover:text-black transition">Appréciation</a>
+        <a href="#appreciation" class="hover:text-black transition">Recommandations</a>
+        <a href="#interets" class="hover:text-black transition">Intérêts</a>
       </nav>
 
       <!-- Right Action CTA Button -->
@@ -314,8 +343,7 @@
         <div class="flex items-center gap-3">
           <span class="w-8 h-px bg-black/40"></span>
           <p class="text-sm sm:text-base text-gray-800">
-            <em class="serif text-lg sm:text-xl text-black">« Toute victoire s’élabore »</em> <span class="text-gray-500 text-xs sm:text-sm ml-1">— Master Management Stratégique
-              (ISM-IAE Paris-Saclay)</span>
+            <em class="serif text-lg sm:text-xl text-black">« Toute victoire s’élabore »</em> <span class="text-gray-500 text-xs sm:text-sm ml-1">— Ma devise</span>
           </p>
         </div>
 
@@ -451,9 +479,9 @@
             <div class="train-cover-shade" aria-hidden="true"></div>
 
             <div class="train-cover-logos">
-              <img src="assets/images/ouigo/logo_ouigo.png" alt="OUIGO" class="train-cover-ouigo">
+              <img loading="lazy" decoding="async" src="assets/images/ouigo/logo_ouigo.png" alt="OUIGO" class="train-cover-ouigo">
               <span class="train-cover-sep" aria-hidden="true"></span>
-              <img src="assets/images/ouigo/logo_sncf_voyageurs.webp" alt="SNCF Voyageurs" class="train-cover-sncf">
+              <img loading="lazy" decoding="async" src="assets/images/ouigo/logo_sncf_voyageurs.webp" alt="SNCF Voyageurs" class="train-cover-sncf">
             </div>
 
             <div class="train-cover-caption">
@@ -506,7 +534,7 @@
             <img src="assets/images/presentation_ferplay.jpg" alt="Akins Anretar au micro lors d'un événement SNCF sur l'innovation numérique"
               loading="lazy" class="w-full h-full object-cover object-[70%_center]">
             <span class="card-logo card-logo--brand">
-              <img src="assets/images/logos/logo_optim_services.png" alt="SNCF Optim'services">
+              <img loading="lazy" decoding="async" src="assets/images/logos/logo_optim_services.png" alt="SNCF Optim'services">
             </span>
             <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur text-white text-[11px] font-semibold">
               <i data-lucide="play" class="w-3 h-3 fill-current"></i> Vidéo du séminaire
@@ -558,7 +586,7 @@
               alt="Séance dans l'hémicycle du Conseil régional d'Île-de-France sur l'héritage sportif des Jeux"
               loading="lazy" class="w-full h-full object-cover object-[50%_45%]">
             <span class="card-logo card-logo--light">
-              <img src="assets/images/logos/logo_region_idf.png" alt="Région Île-de-France">
+              <img loading="lazy" decoding="async" src="assets/images/logos/logo_region_idf.png" alt="Région Île-de-France">
             </span>
           </div>
 
@@ -690,9 +718,9 @@
 
         <!-- Galerie -->
         <div class="lg:col-span-6 grid grid-cols-2 grid-rows-2 gap-3 min-h-[320px]">
-          <a href="assets/images/Afficheconference.png" target="_blank" rel="noopener noreferrer"
+          <a href="assets/images/affiche_conference.jpg" target="_blank" rel="noopener noreferrer"
             class="row-span-2 rounded-xl overflow-hidden border border-gray-200 bg-[#DCE7F7] group/img">
-            <img src="assets/images/Afficheconference.png" alt="Affiche de la conférence de l'orientation du 9 février 2024"
+            <img src="assets/images/affiche_conference.jpg" alt="Affiche de la conférence de l'orientation du 9 février 2024"
               loading="lazy" class="w-full h-full object-contain group-hover/img:scale-[1.03] transition-transform duration-500">
           </a>
           <a href="assets/images/conference_6.jpg" target="_blank" rel="noopener noreferrer"
@@ -850,7 +878,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <!-- Formation 1 -->
-      <div id="master-card" 
+      <div id="master-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Consulter les documents du Master (relevé de notes, plaquette)"
            class="group/master editorial-card p-6 rounded-2xl bg-white border border-gray-200 flex flex-col justify-between cursor-pointer hover:border-black hover:shadow-lg transition">
         <div>
           <span class="date-pill mb-3">
@@ -1164,7 +1192,7 @@
 
             <!-- Pile de documents animée -->
             <div class="doc-stack" data-org="Agorex Expertise" aria-label="Documents Agorex Expertise">
-              <button type="button" class="doc-sheet" data-img="assets/images/docs/fiche_agorex.jpg" data-pdf="assets/docs/Fiche_Appreciation_Agroex_Expertise.pdf"
+              <button type="button" class="doc-sheet" data-img="assets/images/docs/fiche_agorex.jpg" data-pdf="assets/docs/Fiche_Appreciation_Agorex_Expertise.pdf"
                 data-title="Fiche d'appréciation de stage" data-meta="17 mai 2023 · Stéphane DUBOIS" aria-label="Agrandir : Fiche d'appréciation de stage">
                 <img src="assets/images/docs/fiche_agorex.jpg" alt="Fiche d'appréciation de stage Agorex Expertise" loading="lazy">
               </button>
@@ -1185,7 +1213,7 @@
             </div>
 
             <div class="mt-4 space-y-2">
-              <a href="assets/docs/Fiche_Appreciation_Agroex_Expertise.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="assets/docs/Fiche_Appreciation_Agorex_Expertise.pdf" target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-gray-200 hover:border-black transition group/doc">
                 <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 group-hover/doc:bg-black group-hover/doc:text-white transition">
                   <i data-lucide="clipboard-check" class="w-4 h-4"></i>
@@ -1203,7 +1231,7 @@
         <!-- Bloc CTA LinkedIn -->
         <div class="flex flex-col items-center justify-center p-6 sm:p-7 rounded-3xl border-2 border-dashed border-gray-200 hover:border-black text-center transition-all duration-300 group">
           <div class="w-12 h-12 rounded-2xl bg-[#0A66C2] flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6 brightness-0 invert">
+            <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6 brightness-0 invert">
           </div>
           <p class="text-sm font-bold text-black mb-1">Plus de recommandations</p>
           <p class="text-xs text-gray-500 mb-4 leading-relaxed">
@@ -1368,7 +1396,7 @@
 
         <a href="https://www.linkedin.com/in/akins-anretar" target="_blank" rel="noopener noreferrer"
           class="px-6 py-3.5 rounded-full border border-gray-300 hover:border-black text-black text-xs font-bold uppercase tracking-wider transition flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"
+          <img loading="lazy" decoding="async" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"
             class="w-4 h-4" />
           <span>LinkedIn</span>
         </a>
@@ -1413,11 +1441,11 @@
         <div class="col-span-2 md:col-span-5">
           <div class="flex items-center gap-3 mb-4">
             <span class="w-10 h-10 rounded-xl bg-white p-1.5 flex items-center justify-center">
-              <img src="assets/images/Logo_AKINS.png" alt="Logo Akins Anretar" class="w-full h-full object-contain">
+              <img loading="lazy" decoding="async" src="assets/images/Logo_AKINS.png" alt="Logo Akins Anretar" class="w-full h-full object-contain">
             </span>
             <span class="font-display text-2xl tracking-wider">AKINS ANRETAR</span>
           </div>
-          <p class="text-sm text-white/55 leading-relaxed max-w-sm">
+          <p class="text-sm text-white/70 leading-relaxed max-w-sm">
             Chargé de la relation client chez OUIGO, en charge du pilotage de l'assistant virtuel. Master Management
             Stratégique et Changement à l'ISM-IAE Paris-Saclay.
           </p>
@@ -1429,9 +1457,10 @@
             <li><a href="#profil">Profil</a></li>
             <li><a href="#experiences">Expériences</a></li>
             <li><a href="#projets">Projets</a></li>
+            <li><a href="#methodes">Compétences</a></li>
             <li><a href="#formations">Formations</a></li>
             <li><a href="#appreciation">Recommandations</a></li>
-            <li><a href="#interets">Centres d'intérêt</a></li>
+            <li><a href="#interets">Intérêts</a></li>
           </ul>
         </nav>
 
@@ -1465,12 +1494,12 @@
   <!-- ========================================== -->
   <!-- MODAL: DÉTAIL D'UNE MISSION               -->
   <!-- ========================================== -->
-  <div id="project-modal"
+  <div id="project-modal" role="dialog" aria-modal="true" aria-label="Détail de la mission"
     class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto">
     <div class="relative w-full max-w-3xl bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden my-8">
 
       <!-- Close Button -->
-      <button onclick="closeProjectModal()"
+      <button type="button" id="project-modal-close" onclick="closeProjectModal()" aria-label="Fermer la fiche"
         class="absolute top-5 right-5 z-20 w-9 h-9 rounded-full bg-gray-100 hover:bg-black hover:text-white text-gray-600 flex items-center justify-center transition">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
@@ -1485,13 +1514,13 @@
   <div id="toast-notification"></div>
 
   <!-- Main JavaScript File -->
-  <script src="assets/js/train-cover.js?v=20261030i"></script>
-  <script src="assets/js/main.js?v=20261104"></script>
-  <script src="assets/js/apple-effects.js?v=20261030i"></script>
-  <script src="assets/js/doc-stack.js?v=20261030i"></script>
-  <script src="assets/js/photo-slideshow.js?v=20261030i"></script>
-  <script src="assets/js/linkedin-feed.js?v=20261030i"></script>
-  <script src="assets/js/interests.js?v=20261030i"></script>
+  <script src="assets/js/train-cover.js?v=20261104b"></script>
+  <script src="assets/js/main.js?v=20261104b"></script>
+  <script src="assets/js/apple-effects.js?v=20261104b"></script>
+  <script src="assets/js/doc-stack.js?v=20261104b"></script>
+  <script src="assets/js/photo-slideshow.js?v=20261104b"></script>
+  <script src="assets/js/linkedin-feed.js?v=20261104b"></script>
+  <script src="assets/js/interests.js?v=20261104b"></script>
 
   <script>
   let currentSlide = 0;
@@ -1528,14 +1557,14 @@
     <div class="flex justify-between items-start p-5 border-b border-gray-200">
       <div>
         <h3 class="text-lg font-bold text-black">Master Management Stratégique et Changement</h3>
-        <p class="text-xs text-gray-600">Choisis le document à consulter</p>
+        <p class="text-xs text-gray-600">Choisissez le document à consulter</p>
       </div>
       <button type="button" id="docs-close" aria-label="Fermer" class="text-2xl leading-none text-gray-500 hover:text-black">&times;</button>
     </div>
     <div class="flex flex-col md:flex-row min-h-0 flex-1">
       <ul id="docs-list" class="md:w-64 shrink-0 p-3 space-y-2 border-b md:border-b-0 md:border-r border-gray-200 overflow-auto"></ul>
       <div class="flex-1 min-h-[320px] bg-gray-50 flex flex-col">
-        <p id="docs-empty" class="m-auto text-sm text-gray-500 p-6">Sélectionne un document dans la liste.</p>
+        <p id="docs-empty" class="m-auto text-sm text-gray-500 p-6">Sélectionnez un document dans la liste.</p>
         <iframe id="docs-frame" title="Aperçu du document" class="hidden w-full flex-1 bg-white"></iframe>
         <a id="docs-open" target="_blank" rel="noopener" class="hidden text-center text-xs font-semibold py-2 border-t border-gray-200 text-black hover:underline">Ouvrir dans un nouvel onglet ↗</a>
       </div>

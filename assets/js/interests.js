@@ -279,7 +279,7 @@
     if (!d || !card) return;
 
     const photo = d.photos[0]
-      ? `<div class="dest-photo"><img src="${IMG}${d.photos[0]}" alt="${d.name}"></div>`
+      ? `<div class="dest-photo"><img src="${IMG}${d.photos[0]}" alt="${d.name}" loading="lazy" decoding="async"></div>`
       : `<div class="dest-photo is-empty">Photo à venir</div>`;
     card.innerHTML = `
       ${photo}
