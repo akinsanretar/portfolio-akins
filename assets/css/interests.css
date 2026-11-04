@@ -243,6 +243,18 @@
   font-size: 13px;
 }
 
+/* Grand écran : la colonne des destinations ne dépasse plus la hauteur de la carte */
+@media (min-width: 1024px) {
+  .destination-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .destination-list.space-y-2 > * { margin-top: 0 !important; }
+  .destination-list button { padding: 10px 12px; gap: 10px; }
+  .destination-card .dest-photo { aspect-ratio: 16 / 9; }
+}
+
 /* ---------- Univers LECTURE : papier et bibliothèque ---------- */
 .universe-lecture {
   background:

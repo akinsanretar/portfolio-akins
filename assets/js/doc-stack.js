@@ -6,6 +6,11 @@
 
 (function () {
   const INTERVAL = 4500;
+  // Textes anglais sur en.html (assets/js/i18n-en.js)
+  const L = Object.assign({
+    viewer: 'Aperçu du document', prev: 'Document précédent', next: 'Document suivant',
+    download: 'Télécharger', openPdf: 'Ouvrir le PDF', close: 'Fermer', show: 'Afficher '
+  }, (window.I18N_EN || {}).docStack);
   const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- Visionneuse ----------
@@ -19,7 +24,7 @@
     viewer.className = 'doc-viewer';
     viewer.setAttribute('role', 'dialog');
     viewer.setAttribute('aria-modal', 'true');
-    viewer.setAttribute('aria-label', 'Aperçu du document');
+    viewer.setAttribute('aria-label', L.viewer);
     viewer.innerHTML = `
       <div class="doc-viewer-panel">
         <div class="doc-viewer-head">
@@ -28,23 +33,23 @@
             <h3 class="doc-viewer-title text-base sm:text-lg font-extrabold text-black leading-tight"></h3>
             <p class="doc-viewer-meta text-[11px] font-mono text-gray-500 mt-0.5"></p>
           </div>
-          <button type="button" class="doc-viewer-close w-9 h-9 shrink-0 rounded-full bg-gray-100 hover:bg-black hover:text-white text-gray-600 flex items-center justify-center transition" aria-label="Fermer">
+          <button type="button" class="doc-viewer-close w-9 h-9 shrink-0 rounded-full bg-gray-100 hover:bg-black hover:text-white text-gray-600 flex items-center justify-center transition" aria-label="${L.close}">
             <i data-lucide="x" class="w-4 h-4"></i>
           </button>
         </div>
         <div class="doc-viewer-body">
-          <button type="button" class="doc-viewer-nav" data-dir="-1" aria-label="Document précédent"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+          <button type="button" class="doc-viewer-nav" data-dir="-1" aria-label="${L.prev}"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
           <img alt="">
-          <button type="button" class="doc-viewer-nav" data-dir="1" aria-label="Document suivant"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+          <button type="button" class="doc-viewer-nav" data-dir="1" aria-label="${L.next}"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
         </div>
         <div class="doc-viewer-foot">
           <span class="doc-viewer-count text-[11px] font-mono text-gray-500"></span>
           <div class="flex gap-2">
             <a class="doc-viewer-download px-4 py-2 rounded-full border border-gray-300 hover:border-black text-black text-xs font-bold transition flex items-center gap-1.5" download>
-              <i data-lucide="download" class="w-3.5 h-3.5"></i> Télécharger
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> ${L.download}
             </a>
             <a class="doc-viewer-open px-4 py-2 rounded-full bg-black hover:bg-gray-800 text-white text-xs font-bold transition flex items-center gap-1.5" target="_blank" rel="noopener noreferrer">
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Ouvrir le PDF
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> ${L.openPdf}
             </a>
           </div>
         </div>
@@ -133,7 +138,7 @@
       const dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'doc-stack-dot';
-      dot.setAttribute('aria-label', 'Afficher ' + docs[i].title);
+      dot.setAttribute('aria-label', L.show + docs[i].title);
       dot.addEventListener('click', () => { goTo(i); restart(); });
       dotsWrap.appendChild(dot);
       return dot;

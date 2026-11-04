@@ -150,6 +150,11 @@ const projectsData = [
   }
 ];
 
+// Version anglaise (en.html) : textes fournis par assets/js/i18n-en.js, sinon français
+const I18N = window.I18N_EN || null;
+const tr = (key, fr) => (I18N && I18N.ui && I18N.ui[key]) || fr;
+const PROJECTS = (I18N && I18N.projects) || projectsData;
+
 document.addEventListener("DOMContentLoaded", () => {
   setupModalListeners();
   setupCopyEmail();
@@ -162,7 +167,7 @@ let projectModalOpener = null;
 
 // Ouvre la fiche détaillée d'une mission
 window.openProjectModal = function (projectId) {
-  const proj = projectsData.find(p => p.id === projectId);
+  const proj = PROJECTS.find(p => p.id === projectId);
   if (!proj) return;
 
   const modal = document.getElementById("project-modal");
@@ -194,7 +199,7 @@ window.openProjectModal = function (projectId) {
       <!-- Couverture animée -->
       <div class="train-cover train-cover--modal">
         <div class="train-cover-photo">
-          <img src="assets/images/ouigo/train_ouigo.webp" alt="TGV OUIGO bleu à deux étages roulant dans la campagne">
+          <img src="assets/images/ouigo/train_ouigo.webp" alt="${tr('trainAlt', 'TGV OUIGO bleu à deux étages roulant dans la campagne')}">
         </div>
         <div class="train-cover-speed" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
         <div class="train-cover-shade" aria-hidden="true"></div>
@@ -204,8 +209,8 @@ window.openProjectModal = function (projectId) {
           <img src="assets/images/ouigo/logo_sncf_voyageurs.webp" alt="SNCF Voyageurs" class="train-cover-sncf">
         </div>
         <div class="train-cover-caption">
-          <span class="train-cover-kicker">Relation client · Assistant virtuel IA</span>
-          <span class="train-cover-title">Selfcare voyageur 24/7</span>
+          <span class="train-cover-kicker">${tr('trainKicker', 'Relation client · Assistant virtuel IA')}</span>
+          <span class="train-cover-title">${tr('trainTitle', 'Selfcare voyageur 24/7')}</span>
         </div>
       </div>` : ""}
 
@@ -227,19 +232,19 @@ window.openProjectModal = function (projectId) {
 
       <!-- Summary Box -->
       <div class="p-4 rounded-xl bg-white border border-gray-200">
-        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Résumé de la mission</h4>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">${tr('summary', 'Résumé de la mission')}</h4>
         <p class="text-sm text-gray-800 leading-relaxed">${proj.summary}</p>
       </div>
 
       <!-- La mission en détail : contexte, objectif, actions, résultats -->
       <div class="space-y-4">
-        <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider">LA MISSION EN DÉTAIL</h4>
+        <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider">${tr('detail', 'LA MISSION EN DÉTAIL')}</h4>
 
         <!-- Situation -->
         <div class="p-4 rounded-xl bg-white border border-gray-200">
           <div class="flex items-center gap-2 mb-1.5">
             <span class="star-tag bg-gray-100 text-gray-900"><i data-lucide="compass" class="w-3.5 h-3.5"></i></span>
-            <h5 class="text-sm font-bold text-gray-900">Le contexte</h5>
+            <h5 class="text-sm font-bold text-gray-900">${tr('context', 'Le contexte')}</h5>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed">${proj.star.situation}</p>
         </div>
@@ -248,7 +253,7 @@ window.openProjectModal = function (projectId) {
         <div class="p-4 rounded-xl bg-white border border-gray-200">
           <div class="flex items-center gap-2 mb-1.5">
             <span class="star-tag bg-gray-100 text-gray-900"><i data-lucide="target" class="w-3.5 h-3.5"></i></span>
-            <h5 class="text-sm font-bold text-gray-900">Mon objectif</h5>
+            <h5 class="text-sm font-bold text-gray-900">${tr('goal', 'Mon objectif')}</h5>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed">${proj.star.tache}</p>
         </div>
@@ -257,7 +262,7 @@ window.openProjectModal = function (projectId) {
         <div class="p-4 rounded-xl bg-white border border-gray-200">
           <div class="flex items-center gap-2 mb-1.5">
             <span class="star-tag bg-gray-100 text-gray-900"><i data-lucide="list-checks" class="w-3.5 h-3.5"></i></span>
-            <h5 class="text-sm font-bold text-gray-900">Ce que j'ai réalisé</h5>
+            <h5 class="text-sm font-bold text-gray-900">${tr('done', "Ce que j'ai réalisé")}</h5>
           </div>
           <ul class="space-y-2 mt-2">
             ${proj.star.action.map(act => `
@@ -273,7 +278,7 @@ window.openProjectModal = function (projectId) {
         <div class="p-4 rounded-xl bg-gray-900 text-white border border-gray-800">
           <div class="flex items-center gap-2 mb-1.5">
             <span class="star-tag bg-white text-gray-900"><i data-lucide="trending-up" class="w-3.5 h-3.5"></i></span>
-            <h5 class="text-sm font-bold text-white">Les résultats</h5>
+            <h5 class="text-sm font-bold text-white">${tr('results', 'Les résultats')}</h5>
           </div>
           <ul class="space-y-2 mt-2">
             ${proj.star.resultats.map(res => `
@@ -288,7 +293,7 @@ window.openProjectModal = function (projectId) {
 
       <!-- Livrables Majeurs -->
       <div>
-        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">LIVRABLES MAJEURS</h4>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">${tr('deliverables', 'LIVRABLES MAJEURS')}</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           ${proj.deliverables.map(d => `
             <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-800 flex items-center gap-2">
@@ -301,7 +306,7 @@ window.openProjectModal = function (projectId) {
 
       <!-- Skills Used -->
       <div>
-        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">COMPÉTENCES MOBILISÉES</h4>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">${tr('skills', 'COMPÉTENCES MOBILISÉES')}</h4>
         <div class="flex flex-wrap gap-1.5">
           ${proj.skills.map(s => `
             <span class="px-3 py-1 rounded-full bg-gray-200 text-gray-800 text-xs font-semibold">
@@ -315,14 +320,14 @@ window.openProjectModal = function (projectId) {
 
     <!-- Modal Footer -->
     <div class="p-4 sm:p-5 border-t border-gray-200 bg-white flex items-center justify-between flex-wrap gap-2">
-      <span class="serif text-base text-gray-600">« Toute victoire s’élabore »</span>
+      <span class="serif text-base text-gray-600">${tr('motto', '« Toute victoire s’élabore »')}</span>
       <div class="flex gap-2">
-        <a href="mailto:akins.anretar@yahoo.com?subject=Contact suite à votre portfolio - ${encodeURIComponent(proj.title)}" class="px-5 py-2.5 rounded-full bg-black text-white text-xs font-bold hover:bg-gray-800 transition flex items-center gap-1.5">
+        <a href="mailto:akins.anretar@yahoo.com?subject=${encodeURIComponent(tr('mailSubject', 'Contact suite à votre portfolio - ') + proj.title)}" class="px-5 py-2.5 rounded-full bg-black text-white text-xs font-bold hover:bg-gray-800 transition flex items-center gap-1.5">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-          <span>Échanger sur ce projet</span>
+          <span>${tr('discuss', 'Échanger sur ce projet')}</span>
         </a>
         <button onclick="closeProjectModal()" class="px-4 py-2.5 rounded-full border border-gray-300 text-gray-700 text-xs font-semibold hover:bg-gray-100 transition">
-          Fermer
+          ${tr('close', 'Fermer')}
         </button>
       </div>
     </div>
@@ -382,9 +387,9 @@ function setupCopyEmail() {
   copyBtn.addEventListener("click", () => {
     const email = "akins.anretar@yahoo.com";
     navigator.clipboard.writeText(email).then(() => {
-      showToast("Email copié : " + email);
+      showToast(tr('copied', "Email copié : ") + email);
     }).catch(() => {
-      showToast("Email : " + email);
+      showToast(tr('email', "Email : ") + email);
     });
   });
 }
@@ -425,7 +430,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const base = 'w-full text-left p-3 rounded-xl border text-sm transition ';
   const off = 'border-gray-200 bg-white hover:border-black', on = 'border-black bg-black text-white';
 
-  MASTER_DOCS.forEach((d, i) => {
+  const docs = (I18N && I18N.masterDocs) || MASTER_DOCS;
+  docs.forEach((d, i) => {
     const li = document.createElement('li');
     li.innerHTML = `<button type="button" data-i="${i}" class="${base + off}">
       <span class="block font-semibold">${d.titre}</span>
@@ -451,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   list.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
-    const d = MASTER_DOCS[+b.dataset.i];
+    const d = docs[+b.dataset.i];
     list.querySelectorAll('button').forEach(x => x.className = base + (x === b ? on : off));
     empty.style.display = 'none'; frame.style.display = 'block'; link.style.display = 'block';
     frame.src = link.href = d.fichier;

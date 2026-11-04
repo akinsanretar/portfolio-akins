@@ -7,6 +7,42 @@
 (function () {
   const IMG = 'assets/images/interets/';
 
+  // Textes : français par défaut, anglais sur en.html (assets/js/i18n-en.js)
+  const EN = window.I18N_EN || null;
+  const T = Object.assign({
+    close: "Fermer",
+    kicker: "Centre d'intérêt",
+    dialog: "Centre d'intérêt : ",
+    sportLead: "L'école de la vie, sur le terrain depuis l'âge de 6 ans.",
+    sportP1: "Le sport est essentiel dans ma vie. Sans ma dose d'adrénaline, de compétition et de surpassement, je me\n                sens perdu. C'est pour cela qu'il occupe une place centrale dans mon existence.",
+    sportP2: "Je pratique le sport depuis l'âge de 6 ans, notamment le football. Pour moi, le sport est l'école de la\n                vie : c'est en le pratiquant que l'on se développe, que l'on se trouve et que l'on crée du lien social.",
+    sportP3: "Le football m'a permis de me forger une détermination, une discipline et un esprit de compétiteur.",
+    sportStat1: "6 ans",
+    sportStat1Text: "mes débuts au football",
+    sportStat2Text: "valeurs : détermination, discipline, compétition",
+    sportQuote: "« Le sport va chercher la peur pour la dominer, la fatigue pour en triompher, la difficulté pour la vaincre. »",
+    voyageTitle: "Carnet de voyage",
+    voyageLead: "Découvrir de nouveaux paysages et de nouvelles mœurs pour\n            enrichir ma culture et me ressourcer.",
+    mapLoading: "Chargement de la carte…",
+    legendVisited: "Pays visités",
+    legendHome: "France, où je vis",
+    legendDest: "Destinations",
+    voyageP1: "Voyager est quelque chose que j'affectionne particulièrement. Découvrir de nouveaux paysages et de\n                nouvelles mœurs enrichit ma culture et me permet de me ressourcer.",
+    voyageP2: "L'endroit où je me ressource le plus souvent est la <strong>Martinique</strong>. Originaire de cette\n                île, je ne peux qu'être ébloui par ce territoire que j'aime profondément : ses paysages sauvages,\n                paradisiaques et montagneux en font l'une des plus belles îles au monde. Et je n'exagère pas !\n                Malgré ses défauts, je ne cesse de l'aimer.",
+    voyageQuote: "« Quelle magnifique île ! »",
+    lectureTitle: "Lecture",
+    lectureQuote: "« La lecture nourrit l'âme, comme le pain nourrit le corps. »",
+    lectureP1: "Lire me permet de m'évader et de réfléchir à la vie. La réflexion est un processus qui invite à se\n                remettre en question et à porter un nouveau regard sur le monde.",
+    lectureP2: "La lecture apaise mon âme, me détend et enrichit mes connaissances, dans un monde où la connaissance\n                est parfois jugée inutile. Pour moi, c'est tout le contraire !",
+    mapOffline: "Carte indisponible hors connexion.",
+    mapLabel: "Carte des destinations : Martinique, Madrid, Londres et Göteborg",
+    bookAlt: "Le roman « Rompre » de Yann Moix",
+    photoSoon: "Photo à venir",
+    galleryPhoto: "photo",
+    sportAlt: "Sport",
+    voyageAlt: "Voyage"
+  }, EN && EN.interests);
+
   // ---------- Destinations de la carte du monde ----------
   // coords : [longitude, latitude] ; labelDx/labelDy : décalage de l'étiquette
   const DESTINATIONS = [
@@ -48,6 +84,10 @@
     }
   ];
 
+  if (EN && EN.destinations) {
+    DESTINATIONS.forEach((d) => Object.assign(d, EN.destinations[d.id]));
+  }
+
   // Codes ISO numériques des pays visités / de résidence (world-atlas)
   const VISITED = new Set(['724', '826', '752']); // Espagne, Royaume-Uni, Suède
   const HOME = new Set(['250']);                   // France
@@ -58,7 +98,7 @@
     <div class="universe-gallery">
       ${files.map((f, i) => `
         <a href="${IMG}${f}" target="_blank" rel="noopener noreferrer">
-          <img src="${IMG}${f}" alt="${alt} — photo ${i + 1}" loading="lazy">
+          <img src="${IMG}${f}" alt="${alt} — ${T.galleryPhoto} ${i + 1}" loading="lazy">
         </a>`).join('')}
     </div>`;
 
@@ -66,7 +106,7 @@
   const UNIVERSES = {
     sport: () => `
       <div class="universe-panel universe-sport" role="document">
-        <button type="button" class="universe-close" aria-label="Fermer">${icon('x')}</button>
+        <button type="button" class="universe-close" aria-label="${T.close}">${icon('x')}</button>
 
         <svg class="pitch-lines" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <g fill="none" stroke="#FFFFFF" stroke-width="2">
@@ -81,56 +121,53 @@
         </svg>
 
         <div class="universe-hero">
-          <span class="sport-kicker text-xs font-bold uppercase block mb-4">Centre d'intérêt · 01</span>
+          <span class="sport-kicker text-xs font-bold uppercase block mb-4">${T.kicker} · 01</span>
           <h2 class="sport-title">Sport</h2>
-          <p class="mt-4 text-base sm:text-lg max-w-xl">L'école de la vie, sur le terrain depuis l'âge de 6 ans.</p>
+          <p class="mt-4 text-base sm:text-lg max-w-xl">${T.sportLead}</p>
         </div>
 
         <div class="universe-body relative">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
             <div class="lg:col-span-7 space-y-4 text-[15px] leading-relaxed">
-              <p>Le sport est essentiel dans ma vie. Sans ma dose d'adrénaline, de compétition et de surpassement, je me
-                sens perdu. C'est pour cela qu'il occupe une place centrale dans mon existence.</p>
-              <p>Je pratique le sport depuis l'âge de 6 ans, notamment le football. Pour moi, le sport est l'école de la
-                vie : c'est en le pratiquant que l'on se développe, que l'on se trouve et que l'on crée du lien social.</p>
-              <p>Le football m'a permis de me forger une détermination, une discipline et un esprit de compétiteur.</p>
+              <p>${T.sportP1}</p>
+              <p>${T.sportP2}</p>
+              <p>${T.sportP3}</p>
             </div>
             <div class="lg:col-span-5 grid grid-cols-2 gap-3 content-start">
-              <div class="sport-stat"><strong>6 ans</strong><span class="text-xs text-white/60">mes débuts au football</span></div>
-              <div class="sport-stat"><strong>3</strong><span class="text-xs text-white/60">valeurs : détermination, discipline, compétition</span></div>
+              <div class="sport-stat"><strong>${T.sportStat1}</strong><span class="text-xs text-white/60">${T.sportStat1Text}</span></div>
+              <div class="sport-stat"><strong>3</strong><span class="text-xs text-white/60">${T.sportStat2Text}</span></div>
             </div>
           </div>
 
           <blockquote class="sport-quote mb-10">
-            « Le sport va chercher la peur pour la dominer, la fatigue pour en triompher, la difficulté pour la vaincre. »
+            ${T.sportQuote}
             <span class="block mt-2 text-sm font-sans tracking-normal text-white/50">— Pierre de Coubertin</span>
           </blockquote>
 
-          ${gallery(['sport_1.jpg', 'sport_6.jpg', 'sport_3.jpg', 'sport_4.jpg', 'sport_5.jpg', 'sport_2.jpg'], 'Sport')}
+          ${gallery(['sport_1.jpg', 'sport_6.jpg', 'sport_3.jpg', 'sport_4.jpg', 'sport_5.jpg', 'sport_2.jpg'], T.sportAlt)}
         </div>
       </div>`,
 
     voyage: () => `
       <div class="universe-panel universe-voyage" role="document">
-        <button type="button" class="universe-close" aria-label="Fermer">${icon('x')}</button>
+        <button type="button" class="universe-close" aria-label="${T.close}">${icon('x')}</button>
 
         <div class="universe-hero">
-          <span class="voyage-kicker text-xs font-bold uppercase block mb-4">Centre d'intérêt · 02</span>
-          <h2 class="voyage-title">Carnet de voyage</h2>
-          <p class="mt-4 text-base sm:text-lg max-w-xl">Découvrir de nouveaux paysages et de nouvelles mœurs pour
-            enrichir ma culture et me ressourcer.</p>
+          <span class="voyage-kicker text-xs font-bold uppercase block mb-4">${T.kicker} · 02</span>
+          <h2 class="voyage-title">${T.voyageTitle}</h2>
+          <p class="mt-4 text-base sm:text-lg max-w-xl">${T.voyageLead}</p>
         </div>
 
         <div class="universe-body">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
             <div class="lg:col-span-8">
               <div class="world-map" id="world-map">
-                <div class="map-fallback">Chargement de la carte…</div>
+                <div class="map-fallback">${T.mapLoading}</div>
               </div>
               <p class="text-xs mt-3 flex flex-wrap gap-x-5 gap-y-1">
-                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#F2B45C] border border-[#D9822B]"></span>Pays visités</span>
-                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#F9DDB0] border border-[#E3B26A]"></span>France, où je vis</span>
-                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#D9482B]"></span>Destinations</span>
+                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#F2B45C] border border-[#D9822B]"></span>${T.legendVisited}</span>
+                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#F9DDB0] border border-[#E3B26A]"></span>${T.legendHome}</span>
+                <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#D9482B]"></span>${T.legendDest}</span>
               </p>
             </div>
 
@@ -151,49 +188,43 @@
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
             <div class="lg:col-span-7 space-y-4 text-[15px] leading-relaxed">
-              <p>Voyager est quelque chose que j'affectionne particulièrement. Découvrir de nouveaux paysages et de
-                nouvelles mœurs enrichit ma culture et me permet de me ressourcer.</p>
-              <p>L'endroit où je me ressource le plus souvent est la <strong>Martinique</strong>. Originaire de cette
-                île, je ne peux qu'être ébloui par ce territoire que j'aime profondément : ses paysages sauvages,
-                paradisiaques et montagneux en font l'une des plus belles îles au monde. Et je n'exagère pas !
-                Malgré ses défauts, je ne cesse de l'aimer.</p>
+              <p>${T.voyageP1}</p>
+              <p>${T.voyageP2}</p>
             </div>
             <div class="lg:col-span-5 flex items-center">
-              <p class="voyage-title !text-4xl !leading-tight">« Quelle magnifique île ! »</p>
+              <p class="voyage-title !text-4xl !leading-tight">${T.voyageQuote}</p>
             </div>
           </div>
 
-          ${gallery(['voyage_2.jpg', 'voyage_8.jpg', 'voyage_6.jpg', 'voyage_1.jpg', 'voyage_7.jpg', 'voyage_3.jpg'], 'Voyage')}
+          ${gallery(['voyage_2.jpg', 'voyage_8.jpg', 'voyage_6.jpg', 'voyage_1.jpg', 'voyage_7.jpg', 'voyage_3.jpg'], T.voyageAlt)}
         </div>
       </div>`,
 
     lecture: () => `
       <div class="universe-panel universe-lecture" role="document">
-        <button type="button" class="universe-close" aria-label="Fermer">${icon('x')}</button>
+        <button type="button" class="universe-close" aria-label="${T.close}">${icon('x')}</button>
 
         <div class="universe-hero text-center">
-          <span class="lecture-kicker text-xs font-bold uppercase block mb-4">Centre d'intérêt · 03</span>
-          <h2 class="lecture-title">Lecture</h2>
+          <span class="lecture-kicker text-xs font-bold uppercase block mb-4">${T.kicker} · 03</span>
+          <h2 class="lecture-title">${T.lectureTitle}</h2>
         </div>
 
         <div class="universe-body">
           <div class="max-w-2xl mx-auto mb-12">
             <div class="lecture-rule mb-8"></div>
-            <p class="lecture-quote">« La lecture nourrit l'âme, comme le pain nourrit le corps. »</p>
+            <p class="lecture-quote">${T.lectureQuote}</p>
             <p class="text-center text-sm mt-3 opacity-60">— Antoine Albalat</p>
             <div class="lecture-rule mt-8"></div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center max-w-4xl mx-auto">
             <div class="md:col-span-7 lecture-text space-y-5">
-              <p>Lire me permet de m'évader et de réfléchir à la vie. La réflexion est un processus qui invite à se
-                remettre en question et à porter un nouveau regard sur le monde.</p>
-              <p>La lecture apaise mon âme, me détend et enrichit mes connaissances, dans un monde où la connaissance
-                est parfois jugée inutile. Pour moi, c'est tout le contraire !</p>
+              <p>${T.lectureP1}</p>
+              <p>${T.lectureP2}</p>
             </div>
             <figure class="md:col-span-5 max-w-[280px] mx-auto">
               <div class="book">
-                <img src="${IMG}lecture_1.jpg" alt="Le roman « Rompre » de Yann Moix" loading="lazy">
+                <img src="${IMG}lecture_1.jpg" alt="${T.bookAlt}" loading="lazy">
               </div>
               <figcaption class="text-center text-sm mt-6 opacity-70"><em>Rompre</em>, Yann Moix</figcaption>
             </figure>
@@ -222,7 +253,7 @@
         worldData = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then((r) => r.json());
       }
     } catch (e) {
-      container.querySelector('.map-fallback').textContent = 'Carte indisponible hors connexion.';
+      container.querySelector('.map-fallback').textContent = T.mapOffline;
       return null;
     }
 
@@ -241,7 +272,7 @@
     const svg = d3.create('svg')
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('role', 'img')
-      .attr('aria-label', 'Carte des destinations : Martinique, Madrid, Londres et Göteborg');
+      .attr('aria-label', T.mapLabel);
 
     svg.append('path').attr('class', 'graticule').attr('d', path(d3.geoGraticule10()));
 
@@ -280,7 +311,7 @@
 
     const photo = d.photos[0]
       ? `<div class="dest-photo"><img src="${IMG}${d.photos[0]}" alt="${d.name}" loading="lazy" decoding="async"></div>`
-      : `<div class="dest-photo is-empty">Photo à venir</div>`;
+      : `<div class="dest-photo is-empty">${T.photoSoon}</div>`;
     card.innerHTML = `
       ${photo}
       <div class="p-4">
@@ -317,7 +348,7 @@
     overlay.className = 'universe';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', `Centre d'intérêt : ${name}`);
+    overlay.setAttribute('aria-label', T.dialog + name);
     overlay.innerHTML = build();
     document.body.appendChild(overlay);
     document.body.style.overflow = 'hidden';

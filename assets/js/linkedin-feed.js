@@ -47,6 +47,14 @@ const LINKEDIN_POSTS = [
 const LINKEDIN_PROFILE = "https://www.linkedin.com/in/akins-anretar/recent-activity/all/";
 
 (function () {
+  // Version anglaise (en.html) : textes de assets/js/i18n-en.js, posts dans le même ordre
+  const EN = window.I18N_EN || null;
+  const L = Object.assign({
+    read: 'Lire sur LinkedIn', all: 'Toute mon activité',
+    allText: 'Posts, partages et recommandations sur mon profil LinkedIn.', see: 'Voir sur LinkedIn'
+  }, EN && EN.linkedinUi);
+  const posts = LINKEDIN_POSTS.map((p, i) => Object.assign({}, p, EN && EN.linkedin && EN.linkedin[i]));
+
   function postCard(p) {
     return `
       <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="linkedin-slide linkedin-post group">
@@ -60,7 +68,7 @@ const LINKEDIN_PROFILE = "https://www.linkedin.com/in/akins-anretar/recent-activ
           </span>
           <span class="linkedin-post-title">${p.titre}</span>
           <span class="linkedin-post-text">${p.texte}</span>
-          <span class="linkedin-post-link">Lire sur LinkedIn <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+          <span class="linkedin-post-link">${L.read} <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
         </span>
       </a>`;
   }
@@ -69,14 +77,14 @@ const LINKEDIN_PROFILE = "https://www.linkedin.com/in/akins-anretar/recent-activ
     const track = document.getElementById('linkedin-track');
     if (!track) return;
 
-    track.innerHTML = LINKEDIN_POSTS.map(postCard).join('') + `
+    track.innerHTML = posts.map(postCard).join('') + `
       <a href="${LINKEDIN_PROFILE}" target="_blank" rel="noopener noreferrer" class="linkedin-slide linkedin-more group">
         <span class="w-14 h-14 rounded-2xl bg-[#0A66C2] flex items-center justify-center mb-5 shadow-md group-hover:scale-105 transition-transform">
           <i data-lucide="linkedin" class="w-7 h-7 text-white"></i>
         </span>
-        <span class="text-lg font-bold text-black mb-1">Toute mon activité</span>
-        <span class="text-sm text-gray-600 mb-6 max-w-[220px]">Posts, partages et recommandations sur mon profil LinkedIn.</span>
-        <span class="px-5 py-2 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider">Voir sur LinkedIn</span>
+        <span class="text-lg font-bold text-black mb-1">${L.all}</span>
+        <span class="text-sm text-gray-600 mb-6 max-w-[220px]">${L.allText}</span>
+        <span class="px-5 py-2 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider">${L.see}</span>
       </a>`;
 
     if (window.lucide) window.lucide.createIcons();

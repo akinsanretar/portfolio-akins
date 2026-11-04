@@ -176,7 +176,8 @@
   /* 2. Bandeau défilant entre le hero et « À propos » */
   const about = $('#about');
   if (about) {
-    const items = ['Gouvernance de projet', 'IA conversationnelle', 'Conduite du changement', 'Prise de parole', 'Analyse budgétaire', 'PowerApps'];
+    const items = (window.I18N_EN && window.I18N_EN.marquee) ||
+      ['Gouvernance de projet', 'IA conversationnelle', 'Conduite du changement', 'Prise de parole', 'Analyse budgétaire', 'PowerApps'];
     const row = [...items, ...items].map((t) => `<span>${t}</span><span>·</span>`).join('');
     const m = document.createElement('div');
     m.className = 'fx-marquee'; m.setAttribute('aria-hidden', 'true');
