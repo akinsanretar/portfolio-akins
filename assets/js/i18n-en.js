@@ -91,7 +91,7 @@ window.I18N_EN = {
       sector: "Shared Services Centre · SNCF Group",
       summary: "Supervision of the AI chatbot project, redesign of the SharePoint portal, adoption kits for PowerApps and end-to-end organisation of a national seminar for executive assistants.",
       star: {
-        situation: "The Business Travel Shared Services Centre runs three key services (international travel, third-party tickets, vehicle fleet) for tens of thousands of SNCF Group employees, with a strong need for digitalisation.",
+        situation: "The Business Travel Shared Services Centre runs three key services (international business travel, domestic business travel, vehicle fleet) for thousands of SNCF Group employees, with a strong need for digitalisation.",
         tache: "Supervise the internal AI chatbot project, modernise collaboration tools, design change management plans and bring together the Group's executive assistants.",
         action: [
           "AI chatbot supervision: scoping, testing, roll-out and coaching the teams on good adoption practices.",

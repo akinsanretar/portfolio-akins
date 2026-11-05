@@ -56,7 +56,7 @@ const projectsData = [
     sector: "Centre de Services Partagés · Groupe SNCF",
     summary: "Supervision du projet ChatBot IA, refonte du portail SharePoint, kits d'adoption pour la suite PowerApps et organisation clé en main d'un séminaire d'envergure nationale pour les assistants de direction.",
     star: {
-      situation: "Le CSP Déplacements gère 3 pôles vitaux (déplacements internationaux, titres tiers, parc automobile) pour des dizaines de milliers d'agents du Groupe SNCF, avec un fort besoin de digitalisation.",
+      situation: "Le CSP Déplacements gère 3 pôles vitaux (déplacements professionnels internationaux, déplacements professionnels nationaux, parc automobile) pour des milliers d'agents du Groupe SNCF, avec un fort besoin de digitalisation.",
       tache: "Superviser le projet Chatbot IA interne, moderniser les outils collaboratifs, concevoir les plans d'accompagnement au changement et fédérer l'ensemble de la filière d'assistance de direction.",
       action: [
         "Supervision du Chatbot IA : cadrage, tests, déploiement et accompagnement des équipes aux bonnes pratiques d'adoption.",
