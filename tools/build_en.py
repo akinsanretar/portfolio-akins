@@ -47,6 +47,9 @@ RAW = [
     ('<p class="footer-motto">Toute victoire<br><em>s\'élabore.</em></p>',
      '<p class="footer-motto">Every victory<br><em>is built.</em></p>'),
     ('Changement</strong> à l\'<strong', 'Changement</strong> at <strong'),
+    # Paragraphe « Mon parcours »
+    ('            Mon parcours m’a permis d’intervenir dans deux environnements complémentaires. Au sein du groupe SNCF, chez\n            <strong class="text-black">SNCF Optim’services</strong> puis <strong class="text-black">OUIGO</strong>, j’ai\n            contribué au pilotage de projets d’IA conversationnelle et à leur adoption par les équipes, dans des\n            organisations exigeantes, complexes et en constante évolution. Au <strong class="text-black">Conseil régional\n            d’Île-de-France</strong>, j’ai travaillé avec les mairies, les partenaires sportifs et des athlètes de haut\n            niveau, en participant au déploiement de la Semaine Olympique et Paralympique dans le cadre de\n            <strong class="text-black">Paris 2024</strong>.\n',
+     '            My background has taken me to two complementary environments. Within the SNCF Group, at\n            <strong class="text-black">SNCF Optim’services</strong> and then <strong class="text-black">OUIGO</strong>, I have\n            helped manage conversational AI projects and their adoption by teams, in demanding, complex and constantly\n            changing organisations. At the <strong class="text-black">Île-de-France Regional Council</strong>, I worked\n            with town halls, sports partners and elite athletes, taking part in the roll-out of Olympic and Paralympic\n            Week as part of <strong class="text-black">Paris 2024</strong>.\n'),
     # Liens e-mail
     ('subject=Prise de contact via le portfolio', 'subject=Contact via your portfolio'),
 ]
@@ -92,12 +95,6 @@ TEXTS = {
     "Master Management Stratégique et Changement": "Master's in Strategic Management and Change",
     ", je mets mon énergie et mes compétences méthodologiques au service de projets de transformation complexes.":
         ", I bring my energy and my methodical skills to complex transformation projects.",
-    "Mon parcours m'a permis d'intervenir à la fois dans une grande entreprise demandant de la rigueur, du professionnalisme et de la discipline, au sein d'un environnement complexe et changeant (":
-        "My background has taken me both to a large company that demands rigour, professionalism and discipline, in a complex and changing environment (",
-    ") et dans le secteur public institutionnel (": ") and to the public sector (",
-    "Conseil Régional d'Île-de-France": "Île-de-France Regional Council",
-    "lors de l'année des": "during the year of the",
-    "Jeux Olympiques et Paralympiques de Paris 2024": "Paris 2024 Olympic and Paralympic Games",
     "Mes maîtres mots :": "My watchwords:",
     "Proactivité, Réactivité et Esprit d'équipe": "Proactivity, Responsiveness and Team spirit",
     ". J'attache une importance capitale à la conduite du changement : une solution technologique n'a de valeur que si elle est adoptée avec enthousiasme par les équipes de terrain.":
