@@ -24,6 +24,32 @@ window.I18N_EN = {
     email: "Email: "
   },
 
+  contact: {
+    title: "Contact me",
+    intro: "An opportunity, a question or simply a wish to talk? Write to me.",
+    close: "Close the contact window",
+    name: "Full name",
+    company: "Company",
+    email: "Email",
+    subject: "Subject",
+    message: "Message",
+    optional: "optional",
+    required: "required",
+    subjectPlaceholder: "Choose a subject",
+    subjects: ["Work-study", "Job", "Professional discussion", "Other"],
+    send: "Send message",
+    sending: "Sending…",
+    errName: "Please enter your full name.",
+    errEmail: "Please enter a valid email address, for example name@company.com.",
+    errMessage: "Please write your message.",
+    privacy: "Your details are used only to reply to you and are not kept beyond that.",
+    success: "Thank you, your message has been sent. I will get back to you soon.",
+    closeSuccess: "Close",
+    errorBefore: "Your message could not be sent. Please try again in a moment or write to me directly at ",
+    errorAfter: ".",
+    mailSubject: "Message from your portfolio"
+  },
+
   masterDocs: [
     { titre: "Master's year 1 transcript", fichier: "assets/docs/Relevé_des_Notes_AKINS_ANRETAR_M1.pdf", desc: "Academic results 2025/2026 (in French)" },
     { titre: "Master's year 1 course brochure", fichier: "assets/docs/Plaquette_Formation_Modules_Master1.pdf", desc: "Programme and modules (in French)" }

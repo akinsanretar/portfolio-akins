@@ -311,6 +311,7 @@ TEXTS = {
     # Contact
     "Vous recherchez un profil proactif pour piloter vos projets ? Je suis à votre écoute pour échanger.":
         "Looking for a proactive profile to manage your projects? I would be glad to talk.",
+    "Envoyer un message": "Send a message",
     "Copier l'adresse": "Copy address",
     "Saint-Denis · Île-de-France · Mobilité Internationale": "Saint-Denis · Île-de-France · Open to international mobility",
 

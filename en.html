@@ -86,11 +86,12 @@
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
   <!-- Custom CSS for Matthew Brutalist Luxe Theme -->
-  <link rel="stylesheet" href="assets/css/style.css?v=20261105c">
-  <link rel="stylesheet" href="assets/css/apple-effects.css?v=20261105c">
-  <link rel="stylesheet" href="assets/css/doc-stack.css?v=20261105c">
-  <link rel="stylesheet" href="assets/css/interests.css?v=20261105c">
-  <link rel="stylesheet" href="assets/css/train-cover.css?v=20261105c">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261106a">
+  <link rel="stylesheet" href="assets/css/apple-effects.css?v=20261106a">
+  <link rel="stylesheet" href="assets/css/doc-stack.css?v=20261106a">
+  <link rel="stylesheet" href="assets/css/interests.css?v=20261106a">
+  <link rel="stylesheet" href="assets/css/train-cover.css?v=20261106a">
+  <link rel="stylesheet" href="assets/css/contact-modal.css?v=20261106a">
 </head>
 
 <body class="bg-[#EAECEF] text-[#111215] antialiased selection:bg-black selection:text-white relative">
@@ -258,7 +259,7 @@
           class="p-2 rounded-full border border-gray-200 hover:border-black text-gray-600 hover:text-black transition">
           <i data-lucide="printer" class="w-3.5 h-3.5"></i>
         </a>
-        <a href="#contact"
+        <a href="#contact" data-contact-open aria-haspopup="dialog"
           class="px-4 py-2 rounded-full border border-black hover:bg-black hover:text-white text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap transition">
           CONTACT ME
         </a>
@@ -1382,8 +1383,14 @@
       </p>
 
       <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
-        <a href="mailto:akins.anretar@yahoo.com?subject=Contact via your portfolio"
+        <button type="button" data-contact-open aria-haspopup="dialog"
           class="px-8 py-3.5 rounded-full bg-black text-white hover:bg-gray-800 text-xs font-bold uppercase tracking-wider transition shadow-lg flex items-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send a message</span>
+        </button>
+
+        <a href="mailto:akins.anretar@yahoo.com?subject=Contact via your portfolio"
+          class="px-6 py-3.5 rounded-full border border-gray-300 hover:border-black text-black text-xs font-bold uppercase tracking-wider transition flex items-center gap-2">
           <i data-lucide="mail" class="w-4 h-4"></i>
           <span>akins.anretar@yahoo.com</span>
         </a>
@@ -1427,7 +1434,7 @@
             <span class="footer-signature">Akins Anretar</span>
             <span class="footer-signature-line"></span>
           </span>
-          <a href="#contact" class="footer-cta group">
+          <a href="#contact" data-contact-open aria-haspopup="dialog" class="footer-cta group">
             Let's work together
             <span class="footer-cta-arrow"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
           </a>
@@ -1513,14 +1520,15 @@
   <div id="toast-notification"></div>
 
   <!-- Main JavaScript File -->
-  <script src="assets/js/i18n-en.js?v=20261105c"></script>
-  <script src="assets/js/train-cover.js?v=20261105c"></script>
-  <script src="assets/js/main.js?v=20261105c"></script>
-  <script src="assets/js/apple-effects.js?v=20261105c"></script>
-  <script src="assets/js/doc-stack.js?v=20261105c"></script>
-  <script src="assets/js/photo-slideshow.js?v=20261105c"></script>
-  <script src="assets/js/linkedin-feed.js?v=20261105c"></script>
-  <script src="assets/js/interests.js?v=20261105c"></script>
+  <script src="assets/js/i18n-en.js?v=20261106a"></script>
+  <script src="assets/js/train-cover.js?v=20261106a"></script>
+  <script src="assets/js/main.js?v=20261106a"></script>
+  <script src="assets/js/apple-effects.js?v=20261106a"></script>
+  <script src="assets/js/doc-stack.js?v=20261106a"></script>
+  <script src="assets/js/photo-slideshow.js?v=20261106a"></script>
+  <script src="assets/js/linkedin-feed.js?v=20261106a"></script>
+  <script src="assets/js/interests.js?v=20261106a"></script>
+  <script src="assets/js/contact-modal.js?v=20261106a"></script>
 
   <script>
   let currentSlide = 0;
