@@ -353,7 +353,8 @@ def soft(text):
 
 def main():
     version = sys.argv[1] if len(sys.argv) > 1 else ''
-    s = io.open(ROOT / 'index.html', encoding='utf-8', newline='').read()
+    # Fins de ligne unifiées : Git peut écrire index.html en CRLF sous Windows
+    s = io.open(ROOT / 'index.html', encoding='utf-8', newline='').read().replace('\r\n', '\n')
     missing = []
 
     for fr, en in RAW:
