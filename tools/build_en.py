@@ -48,8 +48,8 @@ RAW = [
      '<p class="footer-motto">Every victory<br><em>is built.</em></p>'),
     ('Changement</strong> à l\'<strong', 'Changement</strong> at <strong'),
     # Paragraphe « Mon parcours »
-    ('            Mon parcours m’a permis d’intervenir dans deux environnements complémentaires. Au sein du groupe SNCF, chez\n            <strong class="text-black">SNCF Optim’services</strong> puis <strong class="text-black">OUIGO</strong>, j’ai\n            contribué au pilotage de projets d’IA conversationnelle et à leur adoption par les équipes, dans des\n            organisations exigeantes, complexes et en constante évolution. Au <strong class="text-black">Conseil régional\n            d’Île-de-France</strong>, j’ai travaillé avec les mairies, les partenaires sportifs et des athlètes de haut\n            niveau, en participant au déploiement de la Semaine Olympique et Paralympique dans le cadre de\n            <strong class="text-black">Paris 2024</strong>.\n',
-     '            My background has taken me to two complementary environments. Within the SNCF Group, at\n            <strong class="text-black">SNCF Optim’services</strong> and then <strong class="text-black">OUIGO</strong>, I have\n            helped manage conversational AI projects and their adoption by teams, in demanding, complex and constantly\n            changing organisations. At the <strong class="text-black">Île-de-France Regional Council</strong>, I worked\n            with town halls, sports partners and elite athletes, taking part in the roll-out of Olympic and Paralympic\n            Week as part of <strong class="text-black">Paris 2024</strong>.\n'),
+    ('            Mon parcours m’a permis de faire mes preuves dans deux environnements complémentaires. Au sein du groupe SNCF, chez\n            <strong class="text-black">SNCF Optim’services</strong> puis <strong class="text-black">OUIGO</strong>, j’ai\n            contribué au pilotage de projets d’IA conversationnelle et à leur adoption par les équipes, dans des\n            organisations exigeantes, complexes et en constante évolution. Au <strong class="text-black">Conseil régional\n            d’Île-de-France</strong>, j’ai travaillé avec les mairies, les partenaires sportifs et des athlètes de haut\n            niveau, en participant au déploiement de la Semaine Olympique et Paralympique dans le cadre de\n            <strong class="text-black">Paris 2024</strong>.\n',
+     '            My background has allowed me to prove myself in two complementary environments. Within the SNCF Group, at\n            <strong class="text-black">SNCF Optim’services</strong> and then <strong class="text-black">OUIGO</strong>, I have\n            helped manage conversational AI projects and their adoption by teams, in demanding, complex and constantly\n            changing organisations. At the <strong class="text-black">Île-de-France Regional Council</strong>, I worked\n            with town halls, sports partners and elite athletes, taking part in the roll-out of Olympic and Paralympic\n            Week as part of <strong class="text-black">Paris 2024</strong>.\n'),
     # Liens e-mail
     ('subject=Prise de contact via le portfolio', 'subject=Contact via your portfolio'),
 ]
@@ -89,7 +89,7 @@ TEXTS = {
     "Découvrir": "Explore",
 
     # À propos
-    "Positionnement": "About me",
+    "Introduction": "Introduction",
     "Piloter le changement par la méthode, l'IA et l'engagement humain.": "Driving change through method, AI and people.",
     "Étudiant en": "A student on the",
     "Master Management Stratégique et Changement": "Master's in Strategic Management and Change",
