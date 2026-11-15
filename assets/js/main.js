@@ -17,8 +17,8 @@ const projectsData = [
     sector: "Transport Ferroviaire Grande Vitesse & Low-cost",
     summary: "Chargé de la relation client, je pilote l'assistant virtuel IA de OUIGO : feuille de route, suivi de la performance et accompagnement des équipes.",
     star: {
-      situation: "Chez OUIGO (des millions de billets vendus chaque année), le service relation client fait face à de très forts volumes de requêtes à faible valeur ajoutée (recherches d'horaires, règles bagages, billets, perturbations).",
-      tache: "Cadrer, piloter et optimiser le déploiement continu d'un Assistant Virtuel (Chatbot IA) pour apporter des réponses immédiates 24/7, fluidifier le parcours voyageur et accroître le taux de selfcare.",
+      situation: "Chez OUIGO, la relation client est à taille humaine : 5 collaborateurs pour 20 millions de voyageurs. L'assistant virtuel devient un enjeu et un atout pour désengorger la relation client, en temps normal comme en temps de crise (grève, suppression de train, aléa climatique).",
+      tache: "Cadrer, piloter et optimiser le déploiement continu d'un Assistant Virtuel (Chatbot IA) pour apporter des réponses immédiates 24/7, fluidifier le parcours voyageur et accroître le taux de selfcare. Un objectif clé de la relation client : être présent au bon moment, à n'importe quel moment.",
       action: [
         "Définition de la vision stratégique et de la feuille de route fonctionnelle de l'assistant virtuel, en co-construction avec le prestataire.",
         "Suivi de la satisfaction et de la performance de l'assistant, et pilotage des plans d'amélioration continue.",
@@ -28,7 +28,11 @@ const projectsData = [
         "Suivi des points de contact pour identifier les motifs récurrents de réclamations clients."
       ],
       resultats: [
-        "Plus de 50 000 questions posées à l'assistant virtuel, disponible 24h/24 pour les voyageurs.",
+        "90 % des questions posées par les utilisateurs trouvent une réponse.",
+        "80 000 utilisateurs entre décembre 2025 et octobre 2026.",
+        "Une réponse générée par l'assistant coûte environ 2 000 fois moins cher qu'un contact humain : un projet frugal.",
+        "90 questions de la FAQ couvertes, réparties en 8 thématiques : réservation, offres et options, modification et annulation, infos utiles pour partir, handicap et UFR, paiement, après mon voyage, OUIGO & moi.",
+        "Mise en service le 16 décembre 2025 dans le tunnel d'achat de l'application, puis en septembre 2026 sur la page d'accueil de l'application et du site web.",
         "Feuille de route fonctionnelle partagée avec le prestataire et suivie dans le temps.",
         "Motifs récurrents de réclamations identifiés pour orienter les améliorations."
       ]
