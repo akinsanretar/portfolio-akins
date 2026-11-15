@@ -43,6 +43,10 @@ window.I18N_EN = {
     {
       id: "ouigo",
       trainCover: true,
+      video: {
+        src: "assets/videos/presentation_assistant_virtuel_ouigo.mp4",
+        title: "Presentation of the OUIGO AI virtual assistant project (in French)"
+      },
       title: "Managing the AI Virtual Assistant Project",
       role: "Customer Relations Officer",
       company: "OUIGO (SNCF Voyageurs)",

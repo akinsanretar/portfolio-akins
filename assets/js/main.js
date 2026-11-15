@@ -8,6 +8,10 @@ const projectsData = [
   {
     id: "ouigo",
     trainCover: true,
+    video: {
+      src: "assets/videos/presentation_assistant_virtuel_ouigo.mp4",
+      title: "Présentation du projet d'assistant virtuel IA de OUIGO"
+    },
     title: "Pilotage du Projet d'Assistant Virtuel IA",
     role: "Chargé de la relation client",
     company: "OUIGO (SNCF Voyageurs)",
@@ -222,11 +226,14 @@ window.openProjectModal = function (projectId) {
       <!-- Vidéo -->
       <figure class="rounded-2xl overflow-hidden bg-white border border-gray-200">
         <div class="relative w-full aspect-video bg-black">
+          ${proj.video.src ? `
+          <video class="absolute inset-0 w-full h-full" controls playsinline preload="metadata"
+            src="${proj.video.src}" title="${proj.video.title}"></video>` : `
           <iframe class="absolute inset-0 w-full h-full" loading="lazy"
             src="https://www.youtube-nocookie.com/embed/${proj.video.id}?rel=0"
             title="${proj.video.title}" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`}
         </div>
         <figcaption class="px-4 py-3 text-xs text-gray-500 flex items-center gap-2">
           <i data-lucide="play-circle" class="w-4 h-4 text-gray-400 shrink-0"></i>
