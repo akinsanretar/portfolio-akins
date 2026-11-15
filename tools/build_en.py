@@ -120,8 +120,6 @@ TEXTS = {
         "Today, at OUIGO, I manage the AI virtual assistant, from its first steps to its roll-out in the booking journey, on the website and the app.",
     "Depuis septembre 2025, je pilote l’assistant virtuel IA de OUIGO, de ses premiers pas jusqu’à son déploiement dans le tunnel d’achat, sur le web et l’application. Un projet qui accompagne l’entrée de la relation client OUIGO dans l’ère de l’IA.":
         "Since September 2025, I have been managing OUIGO's AI virtual assistant, from its first steps to its roll-out in the booking journey, on the website and the app. A project that is bringing OUIGO customer relations into the age of AI.",
-    "Pilotage de l'assistant virtuel : feuille de route avec le prestataire, suivi de la satisfaction et de la performance, accompagnement des téléconseillers et évaluation de la qualité des réponses.":
-        "Managing the virtual assistant: roadmap with the vendor, satisfaction and performance monitoring, support for customer service agents and quality assessment of answers.",
     "Plus de 50 000 questions posées à l'assistant virtuel, disponible 24h/24 pour les voyageurs.":
         "More than 50,000 questions asked to the virtual assistant, available 24/7 for passengers.",
     "Voir le détail de la mission": "See mission details",
