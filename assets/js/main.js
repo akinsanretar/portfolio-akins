@@ -31,7 +31,7 @@ const projectsData = [
         "90 % des questions posées par les utilisateurs trouvent une réponse.",
         "80 000 utilisateurs entre décembre 2025 et octobre 2026.",
         "Une réponse générée par l'assistant coûte environ 2 000 fois moins cher qu'un contact humain : un projet frugal.",
-        "90 questions de la FAQ couvertes, réparties en 8 thématiques : réservation, offres et options, modification et annulation, infos utiles pour partir, handicap et UFR, paiement, après mon voyage, OUIGO & moi.",
+        "90 questions de la FAQ couvertes, réparties en 8 thématiques.",
         "Mise en service le 16 décembre 2025 dans le tunnel d'achat de l'application, puis en septembre 2026 sur la page d'accueil de l'application et du site web.",
         "Feuille de route fonctionnelle partagée avec le prestataire et suivie dans le temps.",
         "Motifs récurrents de réclamations identifiés pour orienter les améliorations."
