@@ -9,7 +9,8 @@ const projectsData = [
     id: "ouigo",
     trainCover: true,
     video: {
-      src: "assets/videos/presentation_assistant_virtuel_ouigo.mp4",
+      src: "assets/videos/presentation_assistant_virtuel_ouigo.mp4?v=2",
+      belowResults: true,
       title: "Présentation du projet d'assistant virtuel IA de OUIGO"
     },
     title: "Pilotage du Projet d'Assistant Virtuel IA",
@@ -161,6 +162,28 @@ const projectsData = [
 // Version anglaise (en.html) : textes fournis par assets/js/i18n-en.js, sinon français
 const I18N = window.I18N_EN || null;
 const tr = (key, fr) => (I18N && I18N.ui && I18N.ui[key]) || fr;
+/** Bloc vidéo de la fiche détaillée : fichier local (src) ou vidéo YouTube (id) */
+function videoBlock(proj) {
+  return `
+      <!-- Vidéo -->
+      <figure class="rounded-2xl overflow-hidden bg-white border border-gray-200">
+        <div class="relative w-full aspect-video bg-black">
+          ${proj.video.src ? `
+          <video class="absolute inset-0 w-full h-full" controls playsinline preload="metadata"
+            src="${proj.video.src}" title="${proj.video.title}"></video>` : `
+          <iframe class="absolute inset-0 w-full h-full" loading="lazy"
+            src="https://www.youtube-nocookie.com/embed/${proj.video.id}?rel=0"
+            title="${proj.video.title}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`}
+        </div>
+        <figcaption class="px-4 py-3 text-xs text-gray-500 flex items-center gap-2">
+          <i data-lucide="play-circle" class="w-4 h-4 text-gray-400 shrink-0"></i>
+          ${proj.video.title}
+        </figcaption>
+      </figure>`;
+}
+
 const PROJECTS = (I18N && I18N.projects) || projectsData;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -222,24 +245,7 @@ window.openProjectModal = function (projectId) {
         </div>
       </div>` : ""}
 
-      ${proj.video ? `
-      <!-- Vidéo -->
-      <figure class="rounded-2xl overflow-hidden bg-white border border-gray-200">
-        <div class="relative w-full aspect-video bg-black">
-          ${proj.video.src ? `
-          <video class="absolute inset-0 w-full h-full" controls playsinline preload="metadata"
-            src="${proj.video.src}" title="${proj.video.title}"></video>` : `
-          <iframe class="absolute inset-0 w-full h-full" loading="lazy"
-            src="https://www.youtube-nocookie.com/embed/${proj.video.id}?rel=0"
-            title="${proj.video.title}" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`}
-        </div>
-        <figcaption class="px-4 py-3 text-xs text-gray-500 flex items-center gap-2">
-          <i data-lucide="play-circle" class="w-4 h-4 text-gray-400 shrink-0"></i>
-          ${proj.video.title}
-        </figcaption>
-      </figure>` : ""}
+      ${proj.video && !proj.video.belowResults ? videoBlock(proj) : ""}
 
       <!-- Summary Box -->
       <div class="p-4 rounded-xl bg-white border border-gray-200">
@@ -301,6 +307,8 @@ window.openProjectModal = function (projectId) {
           </ul>
         </div>
       </div>
+
+      ${proj.video && proj.video.belowResults ? videoBlock(proj) : ""}
 
       <!-- Livrables Majeurs -->
       <div>
