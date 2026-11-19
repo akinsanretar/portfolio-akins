@@ -84,8 +84,6 @@ TEXTS = {
     "Chargé de la relation client · Pilotage de l'assistant virtuel": "Customer Relations Officer · Virtual assistant management",
     "Alternant chez OUIGO · SNCF Voyageurs": "Work-study at OUIGO · SNCF Voyageurs",
     "Pilotage IA · OUIGO": "AI management · OUIGO",
-    "« Toute victoire s’élabore »": "« Every victory is built »",
-    "— Ma devise": "— My motto",
     "Découvrir": "Explore",
 
     # À propos
@@ -139,8 +137,8 @@ TEXTS = {
     "Séance dans l'hémicycle du Conseil régional d'Île-de-France sur l'héritage sportif des Jeux":
         "Session in the Île-de-France Regional Council chamber on the sporting legacy of the Games",
     "Région Île-de-France": "Île-de-France Region",
-    "Instruction des dossiers de subventions pour le Conseil Régional, interface avec les mairies, déploiement de la Semaine Olympique et Paralympique et gestion des relations athlètes de haut niveau.":
-        "Reviewing grant applications for the Regional Council, liaising with town halls, rolling out Olympic and Paralympic Week and managing relations with elite athletes.",
+    "Interface avec les mairies et les partenaires sportifs franciliens, déploiement de la Semaine Olympique et Paralympique et gestion des relations avec les athlètes de haut niveau.":
+        "Liaising with town halls and regional sports partners, rolling out Olympic and Paralympic Week and managing relations with elite athletes.",
     "Plus d'une centaine d'ambassadeurs du sport contactés pour le lancement de la Semaine Olympique et Paralympique 2024.":
         "More than a hundred sports ambassadors contacted for the launch of Olympic and Paralympic Week 2024.",
     "Avril – Mai 2023": "April – May 2023",
@@ -279,7 +277,6 @@ TEXTS = {
 
     # Centres d'intérêt
     "En dehors du travail": "Outside work",
-    "« L'homme de l'avenir vaudra ce que vaudront ses loisirs. »": "« The man of the future will be worth what his leisure is worth. »",
     "Découvrir l'univers Sport": "Explore the Sport world",
     "Photos : sport": "Photos: sport",
     "Akins en match de football, ballon au pied": "Akins playing a football match, ball at his feet",

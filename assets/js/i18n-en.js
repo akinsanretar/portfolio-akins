@@ -16,7 +16,6 @@ window.I18N_EN = {
     results: "The results",
     deliverables: "KEY DELIVERABLES",
     skills: "SKILLS USED",
-    motto: "« Every victory is built »",
     mailSubject: "Contact from your portfolio - ",
     discuss: "Discuss this project",
     close: "Close",
@@ -126,19 +125,19 @@ window.I18N_EN = {
     {
       id: "region-idf",
       image: "assets/images/logos/logo_region_idf.png",
-      title: "Grant Applications & Paris 2024 Games",
+      title: "Local Partnerships & Paris 2024 Games",
       role: "Intern, Sports Department",
       company: "Île-de-France Region (Regional Council)",
       period: "March – July 2024 (4 months)",
       contract: "Bachelor's internship",
       location: "Saint-Ouen (93) · Regional headquarters",
       sector: "Regional public policy & Olympic ecosystem",
-      summary: "Review of the Regional Council's sports grant applications, liaison with town halls across Île-de-France, coordination of Olympic and Paralympic Week and relations with elite athletes.",
+      summary: "Liaison with town halls and sports partners across Île-de-France, contribution to Olympic and Paralympic Week, relations with elite athletes and preparation of meetings for the Vice-President in charge of Sport.",
       star: {
         situation: "In the run-up to the Paris 2024 Olympic and Paralympic Games, the Île-de-France Region was mobilising local authorities and promoting sport across the region.",
-        tache: "Carefully review the files submitted to elected officials, coordinate institutional stakeholders and take part in the region's Olympic events.",
+        tache: "Follow up files and projects with towns and sports partners, coordinate institutional stakeholders and take part in the region's Olympic events.",
         action: [
-          "Technical and financial review of grant applications submitted to the Regional Council.",
+          "Managing relations with elite athletes supported by the Region.",
           "Daily liaison with mayors' offices and sports departments of towns across Île-de-France.",
           "Contacting more than a hundred sports ambassadors for the launch of Olympic and Paralympic Week, on 3 April 2024 at the Vaires-sur-Marne Olympic nautical stadium.",
           "On-site organisation of this launch: welcoming the athletes and coordinating the set-up of activities.",
@@ -147,17 +146,16 @@ window.I18N_EN = {
           "Managing the Region's sports ticketing and organising travel (inaugurations, general assemblies, events)."
         ],
         resultats: [
-          "Grant applications reviewed in line with administrative deadlines.",
           "Regular follow-up of files and projects with town halls and regional sports partners.",
           "Took part in the launch of Olympic and Paralympic Week, on 3 April 2024 in Vaires-sur-Marne."
         ]
       },
       deliverables: [
-        "Summary sheets and decision notes for regional committees",
+        "Presentation materials for the meetings of the Vice-President in charge of Sport",
         "Reporting on regional sports projects",
         "On-site coordination of delegations and athletes"
       ],
-      skills: ["Public Governance", "Budget & Administrative Review", "Institutional Relations", "Event Coordination", "Sports Ecosystem"]
+      skills: ["Public Governance", "File & Project Follow-up", "Institutional Relations", "Event Coordination", "Sports Ecosystem"]
     },
     {
       id: "agorex",

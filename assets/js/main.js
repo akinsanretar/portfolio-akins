@@ -91,19 +91,19 @@ const projectsData = [
   {
     id: "region-idf",
     image: "assets/images/logos/logo_region_idf.png",
-    title: "Instruction de Dossiers & JOP Paris 2024",
+    title: "Relations Territoriales & JOP Paris 2024",
     role: "Stagiaire auprès du service des sports",
     company: "Région Île-de-France (Conseil Régional)",
     period: "Mars – Juil. 2024 (4 mois)",
     contract: "Stage de BUT",
     location: "Saint-Ouen (93) · Siège de Région",
     sector: "Politiques Publiques Territoriales & Écosystème Olympique",
-    summary: "Instruction des dossiers de subventions sportives du Conseil Régional, interface avec les mairies franciliennes, coordination de la Semaine Olympique et Paralympique et relations athlètes de haut niveau.",
+    summary: "Interface avec les mairies et les partenaires sportifs franciliens, contribution à la Semaine Olympique et Paralympique, relations avec les athlètes de haut niveau et préparation des réunions du Vice-Président chargé des Sports.",
     star: {
       situation: "À l'approche des Jeux Olympiques et Paralympiques de Paris 2024, la Région Île-de-France gérait des enjeux majeurs de mobilisation territoriale et de rayonnement sportif.",
-      tache: "Instruire avec rigueur les dossiers de délibération soumis aux élus, coordonner les parties prenantes institutionnelles et participer aux temps forts régionaux de l'olympisme.",
+      tache: "Assurer le suivi des dossiers et des projets avec les communes et les partenaires sportifs, coordonner les parties prenantes institutionnelles et participer aux temps forts régionaux de l'olympisme.",
       action: [
-        "Instruction technique et financière des dossiers de subvention présentés au Conseil Régional.",
+        "Gestion des relations avec les athlètes de haut niveau soutenus par la Région.",
         "Interface quotidienne avec les cabinets de maires et directions des sports des communes franciliennes.",
         "Contact de plus d'une centaine d'ambassadeurs du sport pour le lancement de la Semaine Olympique et Paralympique, le 3 avril 2024 au stade nautique olympique de Vaires-sur-Marne.",
         "Organisation de ce lancement sur site : accompagnement des sportifs présents et coordination de l'installation des activités.",
@@ -112,17 +112,16 @@ const projectsData = [
         "Gestion de la billetterie sportive de la Région et organisation des déplacements (inaugurations, assemblées générales, événements)."
       ],
       resultats: [
-        "Dossiers de subvention instruits dans le respect des calendriers administratifs.",
         "Suivi régulier des dossiers et des projets avec les mairies et les partenaires sportifs franciliens.",
         "Participation au lancement de la Semaine Olympique et Paralympique, le 3 avril 2024 à Vaires-sur-Marne."
       ]
     },
     deliverables: [
-      "Fiches de synthèse et notes d'arbitrage pour les commissions régionales",
+      "Supports de présentation pour les réunions du Vice-Président chargé des Sports",
       "Reporting du suivi des projets sportifs territoriaux",
       "Coordination terrain des délégations et athlètes"
     ],
-    skills: ["Gouvernance Publique", "Instruction Budgétaire & Administrative", "Relations Institutionnelles", "Coordination d'Événements", "Écosystème Sportif"]
+    skills: ["Gouvernance Publique", "Suivi de Dossiers & de Projets", "Relations Institutionnelles", "Coordination d'Événements", "Écosystème Sportif"]
   },
   {
     id: "agorex",
@@ -338,8 +337,7 @@ window.openProjectModal = function (projectId) {
     </div>
 
     <!-- Modal Footer -->
-    <div class="p-4 sm:p-5 border-t border-gray-200 bg-white flex items-center justify-between flex-wrap gap-2">
-      <span class="serif text-base text-gray-600">${tr('motto', '« Toute victoire s’élabore »')}</span>
+    <div class="p-4 sm:p-5 border-t border-gray-200 bg-white flex items-center justify-end flex-wrap gap-2">
       <div class="flex gap-2">
         <a href="mailto:akins.anretar@yahoo.com?subject=${encodeURIComponent(tr('mailSubject', 'Contact suite à votre portfolio - ') + proj.title)}" class="px-5 py-2.5 rounded-full bg-black text-white text-xs font-bold hover:bg-gray-800 transition flex items-center gap-1.5">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
